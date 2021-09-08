@@ -2,38 +2,55 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const CreateComment = ({match}) => {
+const CreateComment = ({match, location, setComments }) => {
     const initialState = {
         // author: "",
-        rating: "",
-        body: ""
+        // rating: "",
+        body: "",
+        // location: location.id
     }
-    const [comment, setComment] = useState(initialState)
+    const [commentForm, setCommentForm] = useState(initialState)
 
     const handleChange = (e) => {
-        setComment(e.target.value)
-        // setComment({ ...comment, [e.target.id]: e.target.value })
+        setCommentForm(e.target.value)
+        console.log(e.target.value)
+        // setCommentForm({ ...commentForm, [e.target.id]: e.target.value })
     }
 
     const handleSubmit =  (e) => {
         e.preventDefault()
 
         const newComment = {
-            // rating: comment.rating,
-            body: comment.body,
+            body: commentForm,
+            location_id: location.id
+            // author:
+            // rating: commentForm.rating,
         }
-    
-        axios.post(`http://localhost:8000/comment/`, newComment)
-        .then(res => console.log(res.data))
-        console.log(newComment)
-        setComment(initialState)
+
+       const headers = {
+            'Content-Type': 'application/json',
+            //   'X-CSRFToken':csrftoken,
+        }
+
+        const url = `http://localhost:8000/comment/`
+
+        axios.post(url, newComment, headers)
+        .then(res => 
+            console.log(res.data)
+            // setCommentForm(res.data)
+        )
+        .then(
+            (window.location = `/location/${location.id}`)
+            )
+        // console.log(newComment)
+        setCommentForm(initialState)
     }
 
     return (
-        <div>
+            <div>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="body">Add comment</label>
-                <input type="text" name="body" onChange={handleChange} value={comment.body} required/>
+                <input type="text" id="body" name="body" onChange={handleChange} value={commentForm.body} required/>
                 <button type="submit">Post</button>
             </form>
         </div>
@@ -41,3 +58,20 @@ const CreateComment = ({match}) => {
 }
 
 export default CreateComment
+
+//NOT WORKING FETCH
+// fetch(url, {
+//     method:'POST',
+//     headers:{
+//       'Content-type':'application/json',
+//     //   'X-CSRFToken':csrftoken,
+//     },
+//     body:JSON.stringify(newComment)
+//   })
+//   .then(res => 
+//         console.log(res),
+//         setCommentData(initialState)
+//     )
+//     .catch(err => {
+//         console.error(err);
+//     });

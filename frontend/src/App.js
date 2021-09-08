@@ -6,6 +6,7 @@ import LocationList from './Components/LocationList'
 import CommentsList from "./Components/CommentsList";
 import LocationDetail from "./Components/LocationDetail";
 import CreateComment from "./Components/CreateComment";
+import EditComment from "./Components/EditComment";
 
 function App() {
   // const [locations, setLocations] = useState([])
@@ -27,6 +28,11 @@ function App() {
         <main>
           <Route exact path='/location' component={LocationList}/>
           <Route exact path='/location/:id' component={LocationDetail}/>
+          <Route
+            exact path="/comment/:id/edit"
+            render={routerProps => (
+              <EditComment match={routerProps.match}/>
+              )} />
         </main>
       </div>
   );

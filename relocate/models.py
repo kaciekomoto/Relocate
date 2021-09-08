@@ -11,8 +11,8 @@ class Location(models.Model):
         return self.name
 
 class Comment(models.Model):
-    author = models.CharField(max_length=100)
-    rating= models.IntegerField(max_length=1)
+    author = models.CharField(max_length=100, default="")
+    rating= models.IntegerField(max_length=1, default=0)
     body = models.TextField()
     location = models.ForeignKey(
         Location,
