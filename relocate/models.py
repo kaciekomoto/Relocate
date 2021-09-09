@@ -16,7 +16,7 @@ class Comment(models.Model):
     body = models.TextField()
     location = models.ForeignKey(
         Location,
-        on_delete=models.CASCADE, related_name='comments',
+        on_delete=models.CASCADE, related_name='comments', default="",
     )
 
     def __str__(self):

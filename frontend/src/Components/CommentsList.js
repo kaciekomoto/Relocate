@@ -23,7 +23,11 @@ const CommentsList = ({ location }) => {
                             <h4>{comment.author}</h4>
                             <p>{comment.rating}/5</p>
                             <p>{comment.body}</p>
-                            <Link to={`/comment/${comment.id}`}>Edit</Link>
+                            <Link to={`/comment/${comment.id}`} key={location.id} location={location}>
+                                Edit
+                                {/* <EditComment key={location.id} location={location}/> */}
+                            </Link>
+                            
                         </div>
                     )
                 }

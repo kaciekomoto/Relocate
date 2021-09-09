@@ -12,8 +12,15 @@ const CreateComment = ({match, location, setComments }) => {
     const [commentForm, setCommentForm] = useState(initialState)
 
     const handleChange = (e) => {
-        setCommentForm(e.target.value)
-        console.log(e.target.value)
+        const { name, value } = e.target
+        setCommentForm((data) => {
+            return {
+                ...data,
+                [name] : value,
+            }
+        })
+        // setCommentForm(e.target.value)
+        // console.log(e.target.value)
         // setCommentForm({ ...commentForm, [e.target.id]: e.target.value })
     }
 
@@ -21,7 +28,7 @@ const CreateComment = ({match, location, setComments }) => {
         e.preventDefault()
 
         const newComment = {
-            body: commentForm,
+            body: commentForm.body,
             location_id: location.id
             // author:
             // rating: commentForm.rating,
@@ -49,8 +56,16 @@ const CreateComment = ({match, location, setComments }) => {
     return (
             <div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="body">Add comment</label>
-                <input type="text" id="body" name="body" onChange={handleChange} value={commentForm.body} required/>
+            <label htmlFor="body"/>
+            <input 
+                id="body" 
+                name="body" 
+                placeholder={commentForm.body} 
+                onChange={handleChange}
+                required
+            />
+                {/* <label htmlFor="body">Add comment</label>
+                <input type="text" id="body" name="body" onChange={handleChange} value={commentForm.body} required/> */}
                 <button type="submit">Post</button>
             </form>
         </div>

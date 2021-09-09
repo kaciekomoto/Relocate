@@ -29,7 +29,7 @@ function App() {
           <Route exact path='/location' component={LocationList}/>
           <Route exact path='/location/:id' component={LocationDetail}/>
           <Route
-            exact path="/comment/:id/edit"
+            exact path="/comment/:id"
             render={routerProps => (
               <EditComment match={routerProps.match}/>
               )} />
