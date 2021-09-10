@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useHistory } from "react-router-dom"
 
 const EditComment = ({location, match}) => {
     const [updateComment, setUpdateComment] = useState([])
@@ -11,15 +10,12 @@ const EditComment = ({location, match}) => {
         axios.get(`http://localhost:8000/comment/${match.params.id}`)
         .then(res => {
             setUpdateComment(res.data)
-            console.log(res.data)
+            // console.log(res.data)
         })
         .catch(err => {console.error(err)})
     }, [])
 
     const handleChange = (e) => {
-        // setUpdateComment(e.target.value)
-        // console.log(e.target.value)
-        // setUpdateComment({...updateComment, [e.target.id]: e.target.value})
         const { name, value } = e.target
         setUpdateComment((data) => {
             return {
@@ -32,22 +28,19 @@ const EditComment = ({location, match}) => {
     const updatedComment = (e) => {
         e.preventDefault()
         const editedComment = {
+            author: updateComment.author,
+            rating: updateComment.rating,
             body: updateComment.body,
             location_id: updateComment.location_id
         };
         console.log(editedComment, "test")
-        console.log(location)
-        // console.log(match.params)
+        // console.log(location)
 
-        const headers = {
-            'Content-Type': 'application/json',
-            //   'X-CSRFToken':csrftoken,
-        }
-        // const url = `http://localhost:8000/comment/`
+        const headers = {'Content-Type': 'application/json',}
+
         axios.put(`http://localhost:8000/comment/${match.params.id}`, editedComment, headers)
         .then(res => {
             console.log(res.data)
-            console.log(match.params.id)
             setUpdateComment(res.data)
           })
         .then(window.location=`/location/${updateComment.location_id}`)
@@ -60,6 +53,24 @@ const EditComment = ({location, match}) => {
             {updateComment ? 
             <form onSubmit={updatedComment}>
                 <h2>Edit</h2>
+                <label htmlFor="author">Name</label>
+                <input 
+                    id="author" 
+                    name="author" 
+                    placeholder={updateComment.author} 
+                    onChange={handleChange}
+                    required
+                /> 
+                <br></br>
+                <label htmlFor="rating">Rating</label>
+                <input 
+                    id="rating" 
+                    name="rating" 
+                    placeholder={updateComment.rating} 
+                    onChange={handleChange}
+                    required
+                />
+                <br></br>
                 <label htmlFor="body"/>
                 <input 
                     id="body" 

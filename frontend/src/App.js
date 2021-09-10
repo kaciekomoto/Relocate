@@ -30,9 +30,14 @@ function App() {
           <Route exact path='/location/:id' component={LocationDetail}/>
           <Route
             exact path="/comment/:id"
-            render={routerProps => (
-              <EditComment match={routerProps.match}/>
-              )} />
+            render={props => (
+              <CommentsList match={props.match}/>,
+              <EditComment match={props.match}/>
+              )} 
+          />
+          {/* <Route
+            exact path="/comment/:id"
+            render={props => <CommentsList match={props.match}/>} /> */}
         </main>
       </div>
   );

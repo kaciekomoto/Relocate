@@ -12,7 +12,7 @@ class LocationSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Location
-        fields = ('id', 'location_url', 'name', 'city', 'state', 'description','comments',)
+        fields = ('id', 'location_url', 'name', 'city', 'state', 'description', 'comments',)
 
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):

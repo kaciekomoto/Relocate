@@ -4,8 +4,8 @@ import axios from 'axios'
 
 const CreateComment = ({match, location, setComments }) => {
     const initialState = {
-        // author: "",
-        // rating: "",
+        author: "",
+        rating: "",
         body: "",
         // location: location.id
     }
@@ -28,34 +28,43 @@ const CreateComment = ({match, location, setComments }) => {
         e.preventDefault()
 
         const newComment = {
+            author: commentForm.author,
+            rating: commentForm.rating,
             body: commentForm.body,
             location_id: location.id
-            // author:
-            // rating: commentForm.rating,
         }
 
-       const headers = {
-            'Content-Type': 'application/json',
-            //   'X-CSRFToken':csrftoken,
-        }
+        const headers = {'Content-Type': 'application/json',}
 
         const url = `http://localhost:8000/comment/`
 
         axios.post(url, newComment, headers)
-        .then(res => 
-            console.log(res.data)
-            // setCommentForm(res.data)
-        )
-        .then(
-            (window.location = `/location/${location.id}`)
-            )
-        // console.log(newComment)
+        .then(res => console.log(res.data))
+        .then((window.location = `/location/${location.id}`))
         setCommentForm(initialState)
     }
 
     return (
             <div>
             <form onSubmit={handleSubmit}>
+            <label htmlFor="author">Name</label>
+            <input 
+                id="author" 
+                name="author" 
+                placeholder={commentForm.author} 
+                onChange={handleChange}
+                required
+            /> 
+            <br></br>
+            <label htmlFor="rating">Rating</label>
+            <input 
+                id="rating" 
+                name="rating" 
+                placeholder={commentForm.body} 
+                onChange={handleChange}
+                required
+            />
+            <br></br>
             <label htmlFor="body"/>
             <input 
                 id="body" 
@@ -64,9 +73,7 @@ const CreateComment = ({match, location, setComments }) => {
                 onChange={handleChange}
                 required
             />
-                {/* <label htmlFor="body">Add comment</label>
-                <input type="text" id="body" name="body" onChange={handleChange} value={commentForm.body} required/> */}
-                <button type="submit">Post</button>
+            <button type="submit">Post</button>
             </form>
         </div>
     )

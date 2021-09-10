@@ -5,13 +5,29 @@ import CreateComment from './CreateComment'
 import EditComment from './EditComment'
 import axios from 'axios'
 
-const CommentsList = ({ location }) => {
+const CommentsList = ({ location, match }) => {
     const [comments, setComments] = useState([])
 
     useEffect(() => {
-        axios.get(`/comment/`)
-        .then(res => setComments(res.data));
+        fetchComments()
     }, []) 
+
+    const fetchComments = () => {
+        axios.get(`http://localhost:8000/comment/`)
+        .then(res => 
+            setComments(res.data),
+            // console.log(res.data)    
+        );
+    }
+
+    function deleteComment(id) {
+        axios.delete(`http://localhost:8000/comment/${id}`)
+        .then(res => {
+            console.log(res)
+            setComments(comments.filter(comment => comment.id !== id))
+        })
+        console.log(`deleted post with id of ${id}`)
+    }
 
     return (
         <div>
@@ -23,17 +39,11 @@ const CommentsList = ({ location }) => {
                             <h4>{comment.author}</h4>
                             <p>{comment.rating}/5</p>
                             <p>{comment.body}</p>
-                            <Link to={`/comment/${comment.id}`} key={location.id} location={location}>
-                                Edit
-                                {/* <EditComment key={location.id} location={location}/> */}
-                            </Link>
-                            
+                            <button onClick={() => deleteComment(comment.id)} id="delete-btn">Delete</button>
+                            <Link to={`/comment/${comment.id}`} key={location.id} location={location}>Edit</Link>
                         </div>
                     )
                 }
-                    // if username == user logged in
-                    // edit btn goes here
-                    // delete btn goes here
             })}
         </div>
         <CreateComment key={location.id} location={location} setComments={setComments}/>
@@ -42,16 +52,3 @@ const CommentsList = ({ location }) => {
 }
 
 export default CommentsList
-
-
-//USED FETCH
-// fetch(`/comment/`, {
-//     'method':'GET',
-//     headers: {
-//         'Content-Type': 'application/json',
-//         //auth goes here later
-//     }
-// })
-// .then((res) => res.json())
-// .then(res => setComments(res))
-// .catch(err => console.log(err))
