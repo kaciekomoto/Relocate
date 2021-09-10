@@ -17,12 +17,12 @@ const LocationList = () => {
         {locations.map(location => (
         <Link to={`/location/${location.id}`} key={location.id}>
             <div className="card">
-                    <div>
-                        <h1>{location.name}</h1>
-                        <p>{location.city}</p>
-                        <p>{location.state}</p>
-                        <p>{location.description}</p>
-                    </div>
+                <div>
+                    <h1>{location.name}</h1>
+                    <p>{location.city}</p>
+                    <p>{location.state}</p>
+                    <p>{location.description}</p>
+                </div>
             </div>
         </Link>
         ))}

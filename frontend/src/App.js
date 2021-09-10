@@ -23,7 +23,7 @@ function App() {
         <header>
           <h1>Relocate</h1>
           <Link to="/location">Locations</Link>
-          <Link to="#">Profile</Link>
+          {/* <Link to="#">Profile</Link> */}
         </header>
         <main>
           <Route exact path='/location' component={LocationList}/>

@@ -5,7 +5,7 @@ import CreateComment from './CreateComment'
 import EditComment from './EditComment'
 import axios from 'axios'
 
-const CommentsList = ({ location, match }) => {
+const CommentsList = ({ location }) => {
     const [comments, setComments] = useState([])
 
     useEffect(() => {
@@ -40,7 +40,7 @@ const CommentsList = ({ location, match }) => {
                             <p>{comment.rating}/5</p>
                             <p>{comment.body}</p>
                             <button onClick={() => deleteComment(comment.id)} id="delete-btn">Delete</button>
-                            <Link to={`/comment/${comment.id}`} key={location.id} location={location}>Edit</Link>
+                            <Link to={`/comment/${comment.id}`}>Edit</Link>
                         </div>
                     )
                 }

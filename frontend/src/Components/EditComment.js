@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const EditComment = ({location, match}) => {
+const EditComment = ({ match }) => {
     const [updateComment, setUpdateComment] = useState([])
     // const [locationId, setLocationId] = useState(location)
     

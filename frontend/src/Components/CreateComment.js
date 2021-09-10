@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const CreateComment = ({match, location, setComments }) => {
+const CreateComment = ({ location }) => {
     const initialState = {
         author: "",
         rating: "",
@@ -19,9 +19,6 @@ const CreateComment = ({match, location, setComments }) => {
                 [name] : value,
             }
         })
-        // setCommentForm(e.target.value)
-        // console.log(e.target.value)
-        // setCommentForm({ ...commentForm, [e.target.id]: e.target.value })
     }
 
     const handleSubmit =  (e) => {
@@ -80,20 +77,3 @@ const CreateComment = ({match, location, setComments }) => {
 }
 
 export default CreateComment
-
-//NOT WORKING FETCH
-// fetch(url, {
-//     method:'POST',
-//     headers:{
-//       'Content-type':'application/json',
-//     //   'X-CSRFToken':csrftoken,
-//     },
-//     body:JSON.stringify(newComment)
-//   })
-//   .then(res => 
-//         console.log(res),
-//         setCommentData(initialState)
-//     )
-//     .catch(err => {
-//         console.error(err);
-//     });
