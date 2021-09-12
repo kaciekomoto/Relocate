@@ -20,9 +20,8 @@ function App() {
 
   return (
       <div className="App">
-        <header>
-          <h1>Relocate</h1>
-          <Link to="/location">Locations</Link>
+        <header className="nav-bar">
+          <Link to="/location"><h1 className="app-title">Relocate</h1></Link>
           {/* <Link to="#">Profile</Link> */}
         </header>
         <main>
@@ -31,13 +30,10 @@ function App() {
           <Route
             exact path="/comment/:id"
             render={props => (
-              <CommentsList match={props.match}/>,
+              // <CommentsList match={props.match}/>,
               <EditComment match={props.match}/>
               )} 
           />
-          {/* <Route
-            exact path="/comment/:id"
-            render={props => <CommentsList match={props.match}/>} /> */}
         </main>
       </div>
   );

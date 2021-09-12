@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import axios from 'axios'
 
 const EditComment = ({ match }) => {
@@ -50,37 +51,46 @@ const EditComment = ({ match }) => {
 
     return (
         <div>
-            {updateComment ? 
-            <form onSubmit={updatedComment}>
-                <h2>Edit</h2>
-                <label htmlFor="author">Name</label>
+        {updateComment ? 
+        <form onSubmit={updatedComment}>
+            <h2>Edit</h2>
+            <div className="input-label-containers">
+                <label htmlFor="author">Name:</label>
                 <input 
                     id="author" 
-                    name="author" 
+                    name="author"
+                    className="name-input" 
                     placeholder={updateComment.author} 
                     onChange={handleChange}
-                    required
                 /> 
-                <br></br>
-                <label htmlFor="rating">Rating</label>
+            </div>
+  
+            <div className="input-label-containers">
+                <label htmlFor="rating">Rating:</label>
                 <input 
                     id="rating" 
                     name="rating" 
-                    placeholder={updateComment.rating} 
+                    className="rating-input" 
+                    placeholder={updatedComment.rating}
                     onChange={handleChange}
-                    required
-                />
-                <br></br>
+                />/5
+            </div>
+
+            <div className="input-label-containers">
                 <label htmlFor="body"/>
-                <input 
+                <textarea 
+                    rows="20" 
+                    cols="40"
                     id="body" 
                     name="body" 
-                    placeholder={updateComment.body} 
+                    className="body-input" 
+                    placeholder={updatedComment.body}
                     onChange={handleChange}
-                />
+                    />
+            </div>
                 <div>
-                    <a href="#" id="cancel-btn">Cancel</a>
-                    <button type="submit">Update</button>
+                    <Link to={`/location/${updateComment.location_id}`}>Cancel</Link>
+                    <button type="submit" className="purple-btn">Update</button>
                 </div>
             </form> : null
             }

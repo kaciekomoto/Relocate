@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import axios from 'axios'
 import LocationDetail from './CommentsList'
 
+
 const LocationList = () => {
     const [locations, setLocations] = useState([])
 
@@ -14,15 +15,17 @@ const LocationList = () => {
 
     return (
         <div>
+            <div className="hero-search-container">
+                <div className="search-bar">
+                    SEARCH/HERO
+                </div>
+            </div>
         {locations.map(location => (
         <Link to={`/location/${location.id}`} key={location.id}>
-            <div className="card">
-                <div>
+            <div className="location-card">
                     <h1>{location.name}</h1>
-                    <p>{location.city}</p>
-                    <p>{location.state}</p>
-                    <p>{location.description}</p>
-                </div>
+                    <span className="location">{location.city}, {location.state}</span>
+                    {/* <p>{location.description}</p> */}
             </div>
         </Link>
         ))}
@@ -31,17 +34,3 @@ const LocationList = () => {
 }
 
 export default LocationList
-
-
-
-//USED FETCH
-//     fetch(`/location/`, {
-//         'method':'GET',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             //auth goes here later
-//         }
-//     })
-//     .then((res) => res.json())
-//     .then(res => setLocations(res))
-//     .catch(err => console.log(err))

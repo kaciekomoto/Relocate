@@ -14,12 +14,19 @@ const LocationDetail = ({ match }) => {
 
     return (
         <div>
-            <p>{location.name}</p>
-            <p>{location.city}</p>
-            <p>{location.state}</p>
-            <p>{location.description}</p>
-            <GoogleMap key={location.id} location={location}/>
+        <div className="location-detail">
+            <div className="info-container">
+                <h3 className="location-name">{location.name}</h3>
+                <span className="location">{location.city}, {location.state}</span>
+                <p>{location.description}</p>
+            </div>
+            <div className="map-container">
+                <GoogleMap key={location.id} location={location}/>
+            </div>
+        </div>
+        <div className="comments-list">
             <CommentsList key={location.id} location={location}/>
+        </div>
         </div>
     )
 }
