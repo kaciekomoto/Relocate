@@ -138,9 +138,86 @@ input:focus, textarea:focus {
     background-repeat: no-repeat;
     height: 70vh;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
+
+.hero-tagline{
+    margin: 0rem 0rem 1rem 4rem;
+    font-weight: 400;
+}
+
+.search-bar{
+    border: 1px solid #CCCCCC;
+    background-color: #ffffff;
+    width: 400px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    margin: 0rem 0rem 0rem 5rem;
+}
+
+.search-icon-container{
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.search-input{
+    border: none;
+    width: 90%;
+    margin: 0;
+    border-radius: 25px;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.search-input:focus{
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    outline-offset: none;
+    outline: none;   
+}
+
+.results-card{
+    background-color: #ffffff;
+    z-index: 400;
+    position: absolute;
+    box-shadow: 0 5px 5px #CCCCCC;
+    left: 130px;
+    top: 407px;
+    width: 33t0px;
+    height: 350px;
+    overflow: scroll;
+}
+
+.result-container{
+    border-bottom: 1px solid #CCCCCC;
+    padding:1rem;
+    letter-spacing: 0;
+}
+
+.result-container:hover {
+    background-color: #7B00FF;
+    color: #ffffff;
+}
+
+.result-name{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.result-city-state{
+    font-size:14px;
+}
+
 
 /****** LOCATION LIST ******/
 .location-card{
@@ -201,7 +278,6 @@ input:focus, textarea:focus {
     align-items: center;
     margin-top: 1rem;
     padding: 1rem 2.5rem 1rem 2.5rem;
-    border-bottom: 1px solid #CCCCCC;
 }
 
 .all-caps-sub{
@@ -219,7 +295,7 @@ input:focus, textarea:focus {
 }
 
 .comment-container{
-    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
     padding-top: 40px;
     padding-bottom: 40px;
     display: flex;
@@ -236,9 +312,26 @@ input:focus, textarea:focus {
     margin-bottom: 3px;
 }
 
-/* .rating{
-    font-weight: 600;
-} */
+.rating-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.stars-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.star-icon{
+    color: rgb(223, 192, 17);
+    font-size: 18px;
+}
+
+.rating-txt{
+    margin-left: 4px;
+}
 
 .comment-body{
     margin-top: 10px;
@@ -283,6 +376,7 @@ input:focus, textarea:focus {
     width: 75%;
     border-radius: 5px;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     /* border: 1px solid #461e1e; */
     padding: 2rem;
     background-color: #F0EDF2;
@@ -339,77 +433,4 @@ input:focus, textarea:focus {
 
 .cancel-btn {
     color: #ffffff;
-}
-
-
-/****** SEARCH BAR ******/
-.search-bar{
-    border: 1px solid #CCCCCC;
-    background-color: #ffffff;
-    width: 400px;
-    height: 50px;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    margin: 0rem 0rem 0rem 3rem;
-    /* top: 30%; */
-}
-
-.search-icon-container{
-    height:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 1rem;
-}
-
-.search-input{
-    border: none;
-    width: 90%;
-    margin: 0;
-    border-radius: 25px;
-    font-size: 16px;
-    background-color: transparent;
-}
-
-.search-input:focus{
-    border: none;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    outline-offset: none;
-    outline: none;   
-}
-
-.results-card{
-    background-color: #ffffff;
-    z-index: 400;
-    position: absolute;
-    box-shadow: 0 5px 5px #CCCCCC;
-    left: 75px;
-    top: 365px;
-    width: 350px;
-    height: 350px;
-    overflow: scroll;
-}
-
-.result-container{
-    border-bottom: 1px solid #CCCCCC;
-    padding:1rem;
-    letter-spacing: 0;
-}
-
-.result-container:hover {
-    background-color: #7B00FF;
-    color: #ffffff;
-}
-
-.result-name{
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 3px;
-}
-
-.result-city-state{
-    font-size:14px;
 }

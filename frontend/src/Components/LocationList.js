@@ -17,6 +17,7 @@ const LocationList = () => {
     return (
         <div>
             <div className="hero-search-container">
+                <h2 className="hero-tagline">Lets get moving...</h2>
                 <SearchBar placeholder="Search by neighborhood, city, or state" locations={locations}/>
             </div>
         {locations.map(location => (
@@ -24,7 +25,6 @@ const LocationList = () => {
             <div className="location-card">
                     <h1>{location.name}</h1>
                     <span className="location">{location.city}, {location.state}</span>
-                    {/* <p>{location.description}</p> */}
             </div>
         </Link>
         ))}

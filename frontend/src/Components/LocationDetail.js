@@ -10,7 +10,7 @@ const LocationDetail = ({ match }) => {
         axios.get(`/location/${match.params.id}`)
         .then(res => setLocation(res.data));
     }, []) 
-
+    
     return (
         <div>
         <div className="location-detail">
