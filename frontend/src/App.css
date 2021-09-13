@@ -192,7 +192,7 @@ input:focus, textarea:focus {
     box-shadow: 0 5px 5px #CCCCCC;
     left: 130px;
     top: 407px;
-    width: 33t0px;
+    width: 330px;
     height: 350px;
     overflow: scroll;
 }
@@ -220,19 +220,48 @@ input:focus, textarea:focus {
 
 
 /****** LOCATION LIST ******/
+.locations-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
 .location-card{
-    background-color: #F0EDF2;
-    margin: 2rem 3rem;
-    padding: 10px;
-    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    width: 30%;
+    height: 350px;
+    margin: 1rem;
 }
 
 .location-card:hover {
-    box-shadow: 0 0 10px #CCCCCC; 
-    transform: scale(1.008);
+    box-shadow: 0 0 5px #CCCCCC; 
+    transform: scale(1.005);
 }
 
+.location-image{
+    width: 100%;
+    height: 75%;
+    border-radius: 8px 8px 0px 0px;
+    object-fit: cover;
+}
 
+.location-name{
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-weight: 500;
+    margin: 0.5rem 0rem 0.2rem 1rem;
+}
+
+.location{
+    display: flex;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2em;
+    color: #808080;
+}
 
 /****** LOCATION DETAIL ******/
 .location-detail{
@@ -256,18 +285,14 @@ input:focus, textarea:focus {
     height: 100%;
 }
 
-.location-name{
+.detail-name {
     text-transform: uppercase;
     font-size: 2.8em;
-    font-weight: 500;
-    color: #000000;
+    margin-left:0;
 }
 
-.location{
-    display: flex;
-    margin-bottom: 15px;
-    font-size: 1.2em;
-    color: #808080;
+.detail-location{
+    margin-left:0;
 }
 
 

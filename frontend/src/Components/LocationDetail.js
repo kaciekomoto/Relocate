@@ -10,13 +10,13 @@ const LocationDetail = ({ match }) => {
         axios.get(`/location/${match.params.id}`)
         .then(res => setLocation(res.data));
     }, []) 
-    
+
     return (
         <div>
         <div className="location-detail">
             <div className="info-container">
-                <h3 className="location-name">{location.name}</h3>
-                <span className="location">{location.city}, {location.state}</span>
+                <h3 className="location-name detail-name">{location.name}</h3>
+                <span className="location detail-location">{location.city}, {location.state}</span>
                 <p>{location.description}</p>
             </div>
             <div className="map-container">

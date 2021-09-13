@@ -5,6 +5,7 @@ class Location(models.Model):
     name = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
+    image_url = models.TextField(max_length=800, default="")
     description = models.TextField()
 
     def __str__(self):
