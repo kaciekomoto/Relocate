@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import axios from 'axios'
 import LocationDetail from './CommentsList'
+import SearchBar from './SearchBar'
 
 
 const LocationList = () => {
@@ -16,9 +17,7 @@ const LocationList = () => {
     return (
         <div>
             <div className="hero-search-container">
-                <div className="search-bar">
-                    SEARCH/HERO
-                </div>
+                <SearchBar placeholder="Search by neighborhood, city, or state" locations={locations}/>
             </div>
         {locations.map(location => (
         <Link to={`/location/${location.id}`} key={location.id}>

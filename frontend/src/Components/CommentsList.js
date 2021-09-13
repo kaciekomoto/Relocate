@@ -32,11 +32,7 @@ const CommentsList = ({ location }) => {
 
     return (
         <div>
-        <div className="create-ctrls">
-            <h3 className="bold-subtitle">Comments</h3>
-            <button className="purple-btn add-btn">Add a Comment</button>
-        </div> 
-            <CreateComment  key={location.id} location={location} />
+        <CreateComment  key={location.id} location={location} />
         <div className="comment-list-container">
             {comments.map(comment => {
                 if (location.id == comment.location_id) {
@@ -44,8 +40,8 @@ const CommentsList = ({ location }) => {
                         <div className="comment-container">
                             <div className="comment-main">
                                 <h4 className="author">{comment.author}</h4>
-                                <p>{comment.rating}/5</p>
-                                <p>{comment.body}</p>
+                                <p className="rating">{comment.rating}/5</p>
+                                <p className="comment-body">"{comment.body}"</p>
                             </div>
                             <div className="edit-del-btns">
                                 <Link to={`/comment/${comment.id}`}>
@@ -57,7 +53,7 @@ const CommentsList = ({ location }) => {
                             </div>
                         </div>
                     )
-                }
+                } 
             })}
         </div>
         </div>

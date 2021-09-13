@@ -9,14 +9,6 @@ import CreateComment from "./Components/CreateComment";
 import EditComment from "./Components/EditComment";
 
 function App() {
-  // const [locations, setLocations] = useState([])
-
-  // useEffect(() => {
-  // fetch('/location/')
-  // .then((res) => res.json())
-  // .then(res => setLocations(res))
-  // .catch(err => console.log(err))
-  // }, []) 
 
   return (
       <div className="App">
@@ -30,7 +22,6 @@ function App() {
           <Route
             exact path="/comment/:id"
             render={props => (
-              // <CommentsList match={props.match}/>,
               <EditComment match={props.match}/>
               )} 
           />

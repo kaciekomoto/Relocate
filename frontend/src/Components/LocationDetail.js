@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import CommentsList from './CommentsList'
-import GoogleMap from './GoogleMap'
 import axios from 'axios'
 
 const LocationDetail = ({ match }) => {
@@ -21,7 +20,7 @@ const LocationDetail = ({ match }) => {
                 <p>{location.description}</p>
             </div>
             <div className="map-container">
-                <GoogleMap key={location.id} location={location}/>
+                {/* <iframe className="google-map" src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_API_KEY}&q=${location.name},${location.city}+${location.state}`}></iframe> */}
             </div>
         </div>
         <div className="comments-list">

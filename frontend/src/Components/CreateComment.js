@@ -7,9 +7,9 @@ const CreateComment = ({ location }) => {
         author: "",
         rating: "",
         body: "",
-        // location: location.id
     }
     const [commentForm, setCommentForm] = useState(initialState)
+    const [show, setShow] = useState(false)
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -41,23 +41,21 @@ const CreateComment = ({ location }) => {
         setCommentForm(initialState)
     }
 
-    // function showCommentForm() {
-    //     // e.prevent.Default();
-    //     const createComment = document.querySelectorAll(".create-form");
-    //     if (createComment.style.display === "none") {
-    //         createComment.style.display = "block";
-    //     } else {
-    //         createComment.style.display = "none";
-    //     }
-    // }
 
     return (
-        <div>
-        <form onSubmit={handleSubmit} className="create-form">
-            <button className="icon-btn close-btn">
-                <span class="material-icons">close</span>
-            </button>
-            <h3 className="bold-subtitle">Add a Comment</h3>
+        <div className="create-edit-container">
+        <div className="create-ctrls">
+            <h3 className="bold-sub all-caps-sub">Comments</h3>
+            <button className="purple-btn add-btn" onClick={()=>setShow(true)}>Add a Comment</button>
+        </div> 
+        { show ? 
+        <form onSubmit={handleSubmit} className="create-edit-form">
+            <div className="form-header">
+                <h3 className="bold-sub-small">Add a Comment</h3>
+                <button className="icon-btn close-btn">
+                    <span class="material-icons" onClick={()=>setShow(false)}>close</span>
+                </button>
+            </div>
             <div className="input-label-containers">
                 <label htmlFor="author">Name:</label>
                 <input 
@@ -96,6 +94,8 @@ const CreateComment = ({ location }) => {
             </div>
             <button type="submit" className="purple-btn post-btn">Post</button>
         </form>
+        : null
+        }
         </div>
     )
 }

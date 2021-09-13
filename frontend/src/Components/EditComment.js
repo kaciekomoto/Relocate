@@ -5,7 +5,6 @@ import axios from 'axios'
 
 const EditComment = ({ match }) => {
     const [updateComment, setUpdateComment] = useState([])
-    // const [locationId, setLocationId] = useState(location)
     
     useEffect(() => {
         axios.get(`http://localhost:8000/comment/${match.params.id}`)
@@ -50,10 +49,15 @@ const EditComment = ({ match }) => {
 
 
     return (
-        <div>
+        <div className="create-edit-container">
         {updateComment ? 
-        <form onSubmit={updatedComment}>
-            <h2>Edit</h2>
+        <form onSubmit={updatedComment} className="create-edit-form">
+            <div className="form-header">
+                <h2 className="bold-sub-small">Edit</h2>
+                <Link to={`/location/${updateComment.location_id}`} className="icon-btn close-btn">
+                    <span class="material-icons">close</span>
+                </Link>
+            </div>
             <div className="input-label-containers">
                 <label htmlFor="author">Name:</label>
                 <input 
@@ -71,25 +75,25 @@ const EditComment = ({ match }) => {
                     id="rating" 
                     name="rating" 
                     className="rating-input" 
-                    placeholder={updatedComment.rating}
+                    placeholder={updateComment.rating}
                     onChange={handleChange}
                 />/5
             </div>
 
             <div className="input-label-containers">
-                <label htmlFor="body"/>
+                <label htmlFor="body"></label>
                 <textarea 
                     rows="20" 
                     cols="40"
                     id="body" 
                     name="body" 
                     className="body-input" 
-                    placeholder={updatedComment.body}
+                    placeholder={updateComment.body}
                     onChange={handleChange}
                     />
             </div>
-                <div>
-                    <Link to={`/location/${updateComment.location_id}`}>Cancel</Link>
+                <div className="edit-form-cntrls">
+                    <button className="gray-btn"><Link to={`/location/${updateComment.location_id}`} className="cancel-btn">Cancel</Link></button>
                     <button type="submit" className="purple-btn">Update</button>
                 </div>
             </form> : null
