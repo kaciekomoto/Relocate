@@ -13,11 +13,11 @@ function App() {
   return (
       <div className="App">
         <header className="nav-bar">
-          <Link to="/location"><h1 className="app-title">Relocate</h1></Link>
+          <Link to="/"><h1 className="app-title">Relocate</h1></Link>
           {/* <Link to="#">Profile</Link> */}
         </header>
         <main>
-          <Route exact path='/location' component={LocationList}/>
+          <Route exact path='/' component={LocationList}/>
           <Route exact path='/location/:id' component={LocationDetail}/>
           <Route
             exact path="/comment/:id"

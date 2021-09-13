@@ -20,7 +20,7 @@ const LocationDetail = ({ match }) => {
                 <p>{location.description}</p>
             </div>
             <div className="map-container">
-                <iframe className="google-map" src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_API_KEY}&q=${location.name},${location.city}+${location.state}`}></iframe>
+                {/* <iframe className="google-map" src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_API_KEY}&q=${location.name},${location.city}+${location.state}`}></iframe> */}
             </div>
         </div>
         <div className="comments-list">
