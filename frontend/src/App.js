@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import './App.css';
 
-import LocationList from './Components/LocationList'
+import Home from './Components/Home'
 import CommentsList from "./Components/CommentsList";
 import LocationDetail from "./Components/LocationDetail";
 import CreateComment from "./Components/CreateComment";
@@ -17,7 +17,7 @@ function App() {
           {/* <Link to="#">Profile</Link> */}
         </header>
         <main>
-          <Route exact path='/' component={LocationList}/>
+          <Route exact path='/' component={Home}/>
           <Route exact path='/location/:id' component={LocationDetail}/>
           <Route
             exact path="/comment/:id"

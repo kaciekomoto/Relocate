@@ -10,7 +10,7 @@ const LocationList = () => {
     const [locations, setLocations] = useState([])
 
     useEffect(() => {
-        axios.get('/location/')
+        axios.get('http://localhost:8000/location/')
         .then(res => setLocations(res.data));
     }, []) 
 

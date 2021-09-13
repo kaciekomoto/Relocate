@@ -13,6 +13,9 @@ pylint-django = "*"
 ipython = "*"
 requests = "*"
 python-dotenv = "*"
+whitenoise = "*"
+dj-database-url = "*"
+gunicorn = "*"
 
 [dev-packages]
 
