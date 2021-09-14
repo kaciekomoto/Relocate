@@ -7,7 +7,7 @@ const EditComment = ({ match }) => {
     const [updateComment, setUpdateComment] = useState([])
     
     useEffect(() => {
-        axios.get(`http://localhost:8000/comment/${match.params.id}`)
+        axios.get(`https://relocate-be.herokuapp.com/comment/${match.params.id}`)
         .then(res => {
             setUpdateComment(res.data)
             // console.log(res.data)
@@ -38,7 +38,7 @@ const EditComment = ({ match }) => {
 
         const headers = {'Content-Type': 'application/json',}
 
-        axios.put(`http://localhost:8000/comment/${match.params.id}`, editedComment, headers)
+        axios.put(`https://relocate-be.herokuapp.com/comment/${match.params.id}`, editedComment, headers)
         .then(res => {
             console.log(res.data)
             setUpdateComment(res.data)
@@ -50,7 +50,7 @@ const EditComment = ({ match }) => {
 
     return (
         <div className="create-edit-container">
-        {updateComment ? 
+        {/* {updateComment ?  */}
         <form onSubmit={updatedComment} className="create-edit-form">
             <div className="form-header">
                 <h2 className="bold-sub-small">Edit</h2>
@@ -96,8 +96,9 @@ const EditComment = ({ match }) => {
                     <button className="gray-btn"><Link to={`/location/${updateComment.location_id}`} className="cancel-btn">Cancel</Link></button>
                     <button type="submit" className="purple-btn">Update</button>
                 </div>
-            </form> : null
-            }
+            </form> 
+            {/* : null
+            } */}
         </div>
     )
 }

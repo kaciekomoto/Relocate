@@ -33,7 +33,7 @@ const CreateComment = ({ location }) => {
 
         const headers = {'Content-Type': 'application/json',}
 
-        const url = `http://localhost:8000/comment/`
+        const url = `https://relocate-be.herokuapp.com/comment/`
 
         axios.post(url, newComment, headers)
         .then(res => console.log(res.data))
@@ -46,7 +46,7 @@ const CreateComment = ({ location }) => {
         <div className="create-edit-container">
         <div className="create-ctrls">
             <h3 className="bold-sub all-caps-sub">Comments</h3>
-            <button className="purple-btn add-btn" onClick={()=>setShow(true)}>Add a Comment</button>
+            <button className="purple-btn add-btn" onClick={()=>setShow(true)}>Add Comment</button>
         </div> 
         { show ? 
         <form onSubmit={handleSubmit} className="create-edit-form">

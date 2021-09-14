@@ -7,7 +7,7 @@ const LocationDetail = ({ match }) => {
     const [location, setLocation] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/location/${match.params.id}`)
+        axios.get(`https://relocate-be.herokuapp.com/location/${match.params.id}`)
         .then(res => setLocation(res.data));
     }, []) 
 
@@ -31,25 +31,3 @@ const LocationDetail = ({ match }) => {
 }
 
 export default LocationDetail
-
-// ({
-//     apiKey: 'GOOGLE_API_KEY'
-//   })(GoogleMap);
-
-// {location.id == comment.location_id ?
-// <CommentsList comment={comment}/> :
-// <p>no comments yet</p>
-// }
-
-
-//USED FETCH
-// fetch(`/location/`, {
-//     'method':'GET',
-//     headers: {
-//         'Content-Type': 'application/json',
-//         //auth goes here later
-//     }
-// })
-// .then((res) => res.json())
-// .then(res => setLocation(res))
-// .catch(err => console.log(err))

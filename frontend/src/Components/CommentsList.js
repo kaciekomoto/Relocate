@@ -13,15 +13,15 @@ const CommentsList = ({ location }) => {
     }, []) 
 
     const fetchComments = () => {
-        axios.get(`http://localhost:8000/comment/`)
+        axios.get(`https://relocate-be.herokuapp.com/comment/`)
         .then(res => 
             setComments(res.data),
-            // console.log(res.data)    
+            // console.log(res.data)
         );
     }
 
     function deleteComment(id) {
-        axios.delete(`http://localhost:8000/comment/${id}`)
+        axios.delete(`https://relocate-be.herokuapp.com/comment/${id}`)
         .then(res => {
             console.log(res)
             setComments(comments.filter(comment => comment.id !== id))

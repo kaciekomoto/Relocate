@@ -10,7 +10,7 @@ const LocationList = () => {
     const [locations, setLocations] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8000/location/')
+        axios.get('https://relocate-be.herokuapp.com/location/')
         .then(res => setLocations(res.data));
     }, []) 
 
@@ -29,6 +29,9 @@ const LocationList = () => {
             </Link>
             ))}
         </div>
+        <footer>
+            <span class="copywright">&copy; 2021 Kacie Komoto</span>
+        </footer>   
         </div>
     )
 }
