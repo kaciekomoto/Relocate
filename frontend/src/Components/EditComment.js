@@ -50,7 +50,7 @@ const EditComment = ({ match }) => {
 
     return (
         <div className="create-edit-container">
-        {/* {updateComment ?  */}
+        {updateComment ? 
         <form onSubmit={updatedComment} className="create-edit-form">
             <div className="form-header">
                 <h2 className="bold-sub-small">Edit</h2>
@@ -97,8 +97,8 @@ const EditComment = ({ match }) => {
                     <button type="submit" className="purple-btn">Update</button>
                 </div>
             </form> 
-            {/* : null
-            } */}
+            : null
+            } 
         </div>
     )
 }

@@ -88,8 +88,8 @@ const CommentsList = ({ location }) => {
                                     <span class="material-icons star-icon">star_outline</span>
                                 </div>
                                 } 
-                                <p className="rating-txt"> {comment.rating}/5</p>
                             </div>
+                                <p className="rating-txt"> {comment.rating}/5</p>
 
                             <p className="comment-body">"{comment.body}"</p>
                         </div>

@@ -37,8 +37,8 @@ const CreateComment = ({ location }) => {
 
         axios.post(url, newComment, headers)
         .then(res => console.log(res.data))
-        .then((window.location = `/location/${location.id}`))
         setCommentForm(initialState)
+        .then((window.location = `/location/${location.id}`))
     }
 
 

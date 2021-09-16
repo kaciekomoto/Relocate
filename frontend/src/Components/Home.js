@@ -20,6 +20,13 @@ const LocationList = () => {
                 <h2 className="hero-tagline">Lets get moving...</h2>
                 <SearchBar placeholder="Search by neighborhood, city, or state" locations={locations}/>
             </div>
+            {/* <div>
+                <ul>
+                    <li>All</li>
+                    <li>Chicago</li>
+                    <li>Los Angeles</li>
+                </ul>
+            </div> */}
         <div className="locations-container">
             {locations.map(location => (
             <Link to={`/location/${location.id}`} key={location.id} className="location-card">
