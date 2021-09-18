@@ -8,7 +8,7 @@
 Relocate is designed to help those moving to a new city decide on which neighborhood they may want to live in by reading comments from the people who live there. This could provide relocators with information about safety, school district, cleaniless, convenience, and overall lifestyle in each neighborhood.
 
 #### Check it out here: [Relocate](https://relocate2.herokuapp.com/)
-**this app is deployed on heroku and may take time to load
+**this app is deployed on heroku
 
 ### Languages & Frameworks Used
 - React
