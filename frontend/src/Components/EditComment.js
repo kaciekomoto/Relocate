@@ -50,7 +50,7 @@ const EditComment = ({ match }) => {
 
     return (
         <div className="create-edit-container">
-        {updateComment ? 
+        {updatedComment ? 
         <form onSubmit={updatedComment} className="create-edit-form">
             <div className="form-header">
                 <h2 className="bold-sub-small">Edit</h2>
@@ -68,7 +68,7 @@ const EditComment = ({ match }) => {
                     onChange={handleChange}
                 /> 
             </div>
-  
+
             <div className="input-label-containers">
                 <label htmlFor="rating">Rating:</label>
                 <input 

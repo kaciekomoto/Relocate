@@ -34,8 +34,9 @@ const CommentsList = ({ location }) => {
         <div>
         <CreateComment  key={location.id} location={location} />
         <div className="comment-list-container">
-        {comments.map(comment => {
-            if (location.id == comment.location_id) {
+        {
+            comments.map(comment => {
+            if (location.id == comment.location_id) {  
                 return (
                     <div className="comment-container">
                         <div className="comment-main">
@@ -43,6 +44,7 @@ const CommentsList = ({ location }) => {
                             <h4 className="author">{comment.author}</h4>
 
                             <div className="rating-container">
+
                                 {comment.rating == 5 &&
                                 <div className="stars-container">
                                     <span class="material-icons star-icon">star</span>
@@ -58,7 +60,7 @@ const CommentsList = ({ location }) => {
                                     <span class="material-icons star-icon">star</span>
                                     <span class="material-icons star-icon">star</span>
                                     <span class="material-icons star-icon">star</span>
-                                    <span class="material-icons star-icon">star_outline</span>
+                                    <span class="material-icons gray-star-icon">star</span>
                                 </div>
                                 } 
                                 {comment.rating == 3 &&
@@ -66,32 +68,31 @@ const CommentsList = ({ location }) => {
                                     <span class="material-icons star-icon">star</span>
                                     <span class="material-icons star-icon">star</span>
                                     <span class="material-icons star-icon">star</span>
-                                    <span class="material-icons star-icon">star_outline</span>
-                                    <span class="material-icons star-icon">star_outline</span>
+                                    <span class="material-icons gray-star-icon">star</span>
+                                    <span class="material-icons gray-star-icon">star</span>
                                 </div>
                                 } 
                                 {comment.rating == 2 &&
                                 <div className="stars-container">
                                     <span class="material-icons star-icon">star</span>
                                     <span class="material-icons star-icon">star</span>
-                                    <span class="material-icons star-icon">star_outline</span>
-                                    <span class="material-icons star-icon">star_outline</span>
-                                    <span class="material-icons star-icon">star_outline</span>
+                                    <span class="material-icons gray-star-icon">star</span>
+                                    <span class="material-icons gray-star-icon">star</span>
+                                    <span class="material-icons gray-star-icon">star</span>
                                 </div>
                                 } 
                                 {comment.rating == 1 &&
                                 <div className="stars-container">
                                     <span class="material-icons star-icon">star</span>
-                                    <span class="material-icons star-icon">star_outline</span>
-                                    <span class="material-icons star-icon">star_outline</span>
-                                    <span class="material-icons star-icon">star_outline</span>
-                                    <span class="material-icons star-icon">star_outline</span>
+                                    <span class="material-icons gray-star-icon">star</span>
+                                    <span class="material-icons gray-star-icon">star</span>
+                                    <span class="material-icons gray-star-icon">star</span>
+                                    <span class="material-icons gray-star-icon">star</span>
                                 </div>
                                 } 
-                            </div>
                                 <p className="rating-txt"> {comment.rating}/5</p>
-
-                            <p className="comment-body">"{comment.body}"</p>
+                            </div>
+                        <p className="comment-body">"{comment.body}"</p>
                         </div>
 
                         <div className="edit-del-btns">
@@ -104,12 +105,20 @@ const CommentsList = ({ location }) => {
                         </div>
 
                     </div>
-                    )
-                } 
-            })}
+                )
+            }
+        }).reverse()
+    }
         </div>
         </div>
     )
 }
 
 export default CommentsList
+
+
+// {  for (let i = 0; i < [comment.rating].length; i++ ) {
+// }
+// <span class="material-icons star-icon">star</span>
+
+// }

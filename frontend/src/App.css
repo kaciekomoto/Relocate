@@ -357,6 +357,11 @@ input:focus, textarea:focus {
     font-size: 1rem;
 }
 
+.gray-star-icon{
+    color: #e4e5e9;
+    font-size: 1rem;
+}
+
 .rating-txt{
     margin-left: 4px;
 }
@@ -386,6 +391,13 @@ input:focus, textarea:focus {
     color: #fd3c3c;
 }
 
+.no-comments{
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #8c8c8c;
+    font-style: italic;
+    text-align: center;
+}
 
 /****** CREATE/EDIT COMMENT ******/
 .create-popup-container{
@@ -613,5 +625,8 @@ footer {
     .map-container{
         width: 100%;
         height: 200px;
-    }    
+    } 
+    
+    /**** EDIT COMMENTS ****/
+
 }

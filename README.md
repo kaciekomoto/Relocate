@@ -3,12 +3,13 @@
 #### By Kacie Komoto
 
 ## About Relocate
-Relocate is designed to help those moving to a new city read comments on different neighborhood in the area so they can decide where they may want to live. It's like Yelp but for neighborhoods to live in.
+Relocate is designed to help those moving to a new city decide which neighborhood they may want to live in by reading comments from the people who live there. This could provide relocators with information about safety, school district, cleaniless, convenience, and overall lifestyle in each neighborhood.
 
-<img src="#">
+<img src="./frontend/src/img/Relocate_ReadMe_Pic.png">
 
 
-#### Test it out here: [Relocate](https://relocate2.herokuapp.com/)
+#### Check it out here: [Relocate](https://relocate2.herokuapp.com/)
+***this app is deployed on heroku and may take time to load
 
 ### Languages & Frameworks Used
 - React
@@ -20,11 +21,11 @@ Relocate is designed to help those moving to a new city read comments on differe
 ## Feature Highlights
 - Two Models: Locations and Comments
 - React Frontend that communicates RESTfully with Django Backend API to make Comments CRUDable
-- Search Bar
+- Search Bar that allows user to search by neighborhood, city, or state
 - Google Map API (Embedded Map)
 
 ## Wireframes
-<img src="#">
+<img src="./frontend/src/img/relocate_wireframes.png">
 
 
 ## User Stories
@@ -37,9 +38,10 @@ Relocate is designed to help those moving to a new city read comments on differe
 
 ## Major Hurdles
 #### 1. Working with two interconnected models when creating CRUDability
+Working with two models that were related to eachother, I had to pay special attention to how each were being passed with nested components.
 
-#### 2. HURDLE #2
-
+#### 2. Making changes after Heroku Deployment
+After deploying to Heroku, I noticed that, espcially with my React frontend deployment, it took a while to push/update with my new changes. And this slowed down my productivity a bit.
 
 ## Ideas for Future Modifications
 1. User Authentication
@@ -54,4 +56,8 @@ Relocate is designed to help those moving to a new city read comments on differe
     - Walkscore
     - Safety Rating
     - School District
-5. Improve UX/UI Elements and Usability Testing
+5. Allow more ways for the user to filter and sort list of locations
+    For example:
+    - Sort by (most commented on, highest rated, a-z...etc)
+    - Filter by Location (All, Chicago, Los Angeles...etc)
+6. Improve UX/UI Elements and Usability Testing

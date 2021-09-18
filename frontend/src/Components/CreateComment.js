@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import StarRating from './StarRating'
 
 const CreateComment = ({ location }) => {
     const initialState = {
@@ -37,8 +38,8 @@ const CreateComment = ({ location }) => {
 
         axios.post(url, newComment, headers)
         .then(res => console.log(res.data))
-        setCommentForm(initialState)
         .then((window.location = `/location/${location.id}`))
+        setCommentForm(initialState)
     }
 
 
@@ -67,7 +68,7 @@ const CreateComment = ({ location }) => {
                     required
                 /> 
             </div>
-  
+            
             <div className="input-label-containers">
                 <label htmlFor="rating">Rating:</label>
                 <input 
