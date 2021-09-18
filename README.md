@@ -2,14 +2,13 @@
 
 #### By Kacie Komoto
 
-## About Relocate
-Relocate is designed to help those moving to a new city decide which neighborhood they may want to live in by reading comments from the people who live there. This could provide relocators with information about safety, school district, cleaniless, convenience, and overall lifestyle in each neighborhood.
-
 <img src="./frontend/src/img/Relocate_ReadMe_Pic.png">
 
+## About Relocate
+Relocate is designed to help those moving to a new city decide on which neighborhood they may want to live in by reading comments from the people who live there. This could provide relocators with information about safety, school district, cleaniless, convenience, and overall lifestyle in each neighborhood.
 
 #### Check it out here: [Relocate](https://relocate2.herokuapp.com/)
-***this app is deployed on heroku and may take time to load
+**this app is deployed on heroku and may take time to load
 
 ### Languages & Frameworks Used
 - React
@@ -38,10 +37,10 @@ Relocate is designed to help those moving to a new city decide which neighborhoo
 
 ## Major Hurdles
 #### 1. Working with two interconnected models when creating CRUDability
-Working with two models that were related to eachother, I had to pay special attention to how each were being passed with nested components.
+Working with two models that were related to eachother, I had to pay special attention to how each were being passed between components, espcially nested ones.
 
 #### 2. Making changes after Heroku Deployment
-After deploying to Heroku, I noticed that, espcially with my React frontend deployment, it took a while to push/update with my new changes. And this slowed down my productivity a bit.
+After deploying to Heroku, my React frontend deployment took a lot longer to update after pushing new changes. Thus, making it more difficult to test my code as I implemented more features.
 
 ## Ideas for Future Modifications
 1. User Authentication
